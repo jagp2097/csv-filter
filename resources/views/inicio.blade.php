@@ -13,7 +13,7 @@
     
     <div class="container my-3 card p-3">
 
-        <h3>CSV-Filter Kerana Labs</h3>
+        <h3>CSV-Filter Kirana Labs</h3>
 
         <div class="row">
 
