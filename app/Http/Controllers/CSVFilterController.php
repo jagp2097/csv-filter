@@ -3,12 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class CSVFilterController extends Controller
 {   
 
     public function uploadCSV(Request $request)
     {
+
+        $validator = Validator::make($request->all(), [
+            'csv_file' => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('/')
+                ->withErrors($validator);
+        }
+
+
         $file = new \SplFileObject($request->file('csv_file'));
 
         $file->setFlags(\SplFileObject::READ_CSV);

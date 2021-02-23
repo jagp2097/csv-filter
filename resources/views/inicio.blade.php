@@ -24,6 +24,11 @@
                     <div class="mb-3">
                         <label class="form-label" for="csv">Carge el archivo CSV:</label>
                         <input class="form-control" id="csv" type="file" name="csv_file" accept="text/csv" required>
+                        @error('csv_file')
+                            <span class="text-danger">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                     <button class="btn btn-success"type="submit">Cargar archivo</button>
                 </form>
